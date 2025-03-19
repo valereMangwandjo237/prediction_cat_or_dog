@@ -26,10 +26,3 @@ if uploaded_file is not None:
     image = np.expand_dims(image, axis=0)  # Ajouter une dimension batch
 
     st.write(f"Image shape: {image.shape}")
-
-    # Faire la prédiction
-    prediction = model.predict(image)[0][0]
-    if prediction >= 0.5:
-        st.write("C'est un chien 🐶")
-    else:
-        st.write("C'est un chat 🐱")
