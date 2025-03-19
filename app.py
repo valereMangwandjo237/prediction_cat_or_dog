@@ -20,4 +20,9 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Image chargée",  use_container_width=True)
     if st.button("Predire l'image", help="Cliquez pour envoyer les donnees", type="primary"):
-        st.write("En cours...")
+        # Prétraiter l'image
+        image = image.resize((128, 128))  # Redimensionner comme pour le modèle
+        image = np.array(image) / 255.0   # Normaliser
+        image = np.expand_dims(image, axis=0)
+         # Faire la prédiction
+        st.write(image.shape)
