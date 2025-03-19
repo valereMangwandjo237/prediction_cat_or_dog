@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 
 # Charger le modèle entraîné
-model = load_model("mon_modele.keras")  # Assure-toi que le modèle est dans le même dossier
+model = load_model("model_cat_dog.keras")  # Assure-toi que le modèle est dans le même dossier
 
 # Définir les classes (ex: 0 = Chat, 1 = Chien)
 classes = ["Chat", "Chien"]
