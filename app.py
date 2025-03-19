@@ -26,8 +26,8 @@ if uploaded_file is not None:
     image = np.expand_dims(image, axis=0)  # Ajouter une dimension batch
 
     # Faire la prédiction
-    prediction = model.predict(image)
-    predicted_class = classes[np.argmax(prediction)]
-
-    # Afficher le résultat
-    st.write(f"### 🧐 Résultat : **{predicted_class}**")
+    prediction = model.predict(image)[0][0]
+    if prediction >= 0.5:
+        st.write("C'est un chien 🐶")
+    else:
+        st.write("C'est un chat 🐱")
