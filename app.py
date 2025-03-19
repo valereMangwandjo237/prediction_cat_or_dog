@@ -18,6 +18,6 @@ uploaded_file = st.file_uploader("Choisissez une image...", type=["jpg", "png", 
 if uploaded_file is not None:
     # Afficher l'image
     image = Image.open(uploaded_file)
-    st.image(image, caption="Image chargée", use_column_width=True)
+    st.image(image, caption="Image chargée",  use_container_width=True)
     if st.button("Predire l'image", help="Cliquez pour envoyer les donnees", type="primary"):
         st.write("En cours...")
