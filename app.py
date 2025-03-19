@@ -25,6 +25,8 @@ if uploaded_file is not None:
     image = np.array(image) / 255.0   # Normaliser
     image = np.expand_dims(image, axis=0)  # Ajouter une dimension batch
 
+    st.write(f"Image shape: {image.shape}")
+
     # Faire la prédiction
     prediction = model.predict(image)[0][0]
     if prediction >= 0.5:
