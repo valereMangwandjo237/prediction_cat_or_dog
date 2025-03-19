@@ -19,10 +19,3 @@ if uploaded_file is not None:
     # Afficher l'image
     image = Image.open(uploaded_file)
     st.image(image, caption="Image chargée", use_column_width=True)
-
-    # Prétraiter l'image
-    image = image.resize((128, 128))  # Redimensionner comme pour le modèle
-    image = np.array(image) / 255.0   # Normaliser
-    image = np.expand_dims(image, axis=0)  # Ajouter une dimension batch
-
-    st.write(f"Image shape: {image.shape}")
